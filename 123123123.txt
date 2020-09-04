@@ -1,0 +1,8 @@
+今天是第一天练习
+今天不知道是第几天
+哈哈哈
+<<<<<<< HEAD
+jdjfka
+=======
+djhajkhdkjahfkd
+>>>>>>> dev1
