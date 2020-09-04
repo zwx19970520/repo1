@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.panda.dao.IUserDao">
+    <resultMap  id="studentMap" type="User">
+        <id property="id" column="s_id"></id>
+        <result property="name" column="s_name"></result>
+        <result property="birth" column="s_birth"></result>
+        <result property="sex" column="s_sex"></result>
+    </resultMap>
+    <select id="findAll" resultMap="studentMap">
+        SELECT  * from student;
+    </select>
+
+    <insert id="insertUser" parameterType="user">
+        insert INTO student(s_id,s_name,s_birth,s_sex) VALUES (#{id},#{name},#{birth},#{sex})
+    </insert>
+
+    <update id="updateUser" parameterType="user">
+        UPDATE student set s_name=#{name},s_birth=#{birth},s_sex=#{sex}where s_id=#{id}
+    </update>
+</mapper>
